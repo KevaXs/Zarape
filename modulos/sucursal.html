@@ -1,0 +1,148 @@
+<div id="divDetalleSucursal" class="row justify-content-center content-fluid text-center mt-2 zarape">
+    <h3>Gesti&oacute;n de Sucursales</h3>
+    <div class="col-12 mt-4">
+        <div class="card zarape-card">
+            <div class="card-header text-center zarape-cardHeader">
+                <span class="h4">Detalle de la Sucursal</span>
+                <button class="btn btn-outline float-end zarape-boton-limpiar"
+                        onclick="cm.setDetalleSucursalVisible(false);">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row mb-5">
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <input id="txtIdSucursal" type="text" name="name"  class="form-control" placeholder="ID" readonly/>
+                            <label for="txtId" class="form-label">Id Sucursal:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-4">
+                        <div class="form-floating">
+                            <input id="txtSucursal" type="text" name="name" class="form-control" placeholder="Nombre de la sucursal:">
+                            <label for="txtSucursal" class="form-label">Nombre de la Sucursal:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating">                                         
+                            <input id="txtLatitud" type="text" name="name" class="form-control" placeholder="Latitud">
+                            <label for="txtLatitud" class="form-label" >Latitud:</label>
+                        </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtLongitud" type="text" class="form-control" placeholder="Longitud"/>                                    
+                            <label for="txtLongitud" class="form-label">Longitud:</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5 ms-1 me-1">
+                <div class="col-4">
+                    <div class="form-floating">
+                        <input id="txtCalle" type="text" name="name" class="form-control" placeholder="Calle">
+                        <label for="txtCalle" class="form-label">Calle:</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-floating">                                         
+                        <input id="txtNumero" type="text" name="name" class="form-control" placeholder="N&uacute;mero">
+                        <label for="txtNumero" class="form-label">Número:</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-floating">
+                        <input id="txtColonia" type="text" class="form-control" placeholder="Colonia"/>                                    
+                        <label for="txtColonia" class="form-label">Colonia:</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-floating">
+                        <input id="txtCodigoPostal" type="text" class="form-control" placeholder="C&oacute;digoPostal  "/>                                    
+                        <label for="txtCodigoPostal" class="form-label">CP:</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-4">
+                    <div class="form-floating">                                         
+                        <input id="txtHorarios" type="text" name="name" class="form-control" placeholder="Horarios">
+                        <label for="txtHorarios" class="form-label">Horarios:</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5 mt-5">
+                <div class="col-12 mx-auto">
+                    <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton btn-lg" onclick="cm.guardarSucursal();">
+                            <i class="fas fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                    <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton-eliminar btn-lg" onclick="cm.eliminarSucursal();">
+                            <i class="fas fa-trash"></i>
+                            Eliminar
+                        </button>
+                    </div>
+                    <div class="btn-group col-auto m-2 " role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton-limpiar btn-lg" onclick="cm.limpiarSucursal();">
+                            <i class="fas fa-eraser"></i>
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>               
+
+<div id="divCatalogoSucursales" class="row justify-content-center content-fluid text-center mt-5 zarape-arial-black">
+    <div class="col-12">
+        <div class="card zarape-card">
+            <div class="card-header zarape-cardHeader zarape-arial-black">
+                <span class="h4">Cat&aacute;logo de Sucursales</span>
+                <button class="btn btn-outline float-end zarape-boton-eliminar"
+                        onclick="cm.mostrarFormularioNuevo();">
+                    Nuevo
+                    <i class="fas fa-add"></i>
+                </button>            
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col-md-6 mb-4">
+                            <div class="input-group mb-3">
+                                <input id="txtBuscarSucursal" type="text" class="form-control m-1" placeholder="Sucursal" aria-label="Search" aria-describedby="button-buscar">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-outline zarape-boton-limpiar" onclick="cm.consultar();">
+                                        Buscar
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zarape-comic-sans">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Dirección</th>
+                                        <th>CP</th>
+                                        <th>Horario</th>
+                                        <th>Ver Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodySucursales">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

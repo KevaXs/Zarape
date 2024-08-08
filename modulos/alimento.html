@@ -1,0 +1,137 @@
+<div id="divDetalleAlimento" class="row justify-content-center content-fluid text-center mt-2 zarape">
+    <h3 class="text-center">Gesti&oacute;n de Alimentos</h3>
+    <div class="col-12 mt-4">
+
+        <div class="card zarape-card">
+
+            <div class="card-header tex t-center zarape-cardHeader">
+                <span class="h4">Detalle del Alimento</span>
+                <button class="btn btn-outline float-end zarape-boton-limpiar"
+                        onclick="cm.setDetalleAlimentoVisible(false);">
+                    <i class="fas fa-times"></i>
+                </button>            
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2 mb-5">
+                        <div class="form-floating">
+                            <input id="txtId" type="text" name="name"  class="form-control" placeholder="ID" readonly/>
+                            <label for="txtId" class="form-label">Id Alimento:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtAlimento" type="text" name="name" class="form-control" placeholder="Nombre de alimento:">
+                            <label for="txtAlimento" class="form-label">Nombre del Alimento:</label>
+                        </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtPrecioAlimento" type="text" class="form-control" placeholder="Precio: $"/>                                    
+                            <label for="txtPrecioAlimento" class="form-label">Precio:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating">                                         
+                            <input id="txtDescripcionAlimento" type="text" name="name" class="form-control" placeholder="Descripci&oacute;n:">
+                            <label for="txtDescripcionAlimento" class="form-label" >Descripci&oacute;n:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <select id="cmbCategoria" class="form-select" aria-label="Default select example">                                
+                            </select>
+                            <label class="form-label">Categor&iacute;as:</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Foto:</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-5 mt-5">
+                <div class="col-12 mx-auto">
+                    <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton btn-lg" onclick="cm.guardarAlimento();">
+                            <i class="fas fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                    <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton-eliminar btn-lg" onclick="cm.eliminarAlimento();">
+                            <i class="fas fa-trash"></i>
+                            Eliminar
+                        </button>
+                    </div>
+                    <div class="btn-group col-auto m-2 " role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton-limpiar btn-lg" onclick="cm.limpiarAlimento();" >
+                            <i class="fas fa-eraser"></i>
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>               
+</div>
+
+<div id="divCatalogoAlimentos" class="row justify-content-center text-center mt-5 content-fluid">
+    <div class="col-12">
+        <div class="card zarape-card">
+
+            <div class="card-header zarape-cardHeader">
+                <span class="h3">Cat&aacute;logo de Alimentos</span>
+                <button class="btn btn-outline float-end zarape-boton-eliminar"
+                        onclick="cm.mostrarFormularioNuevo(true);">Nuevo
+                    <i class="fas fa-add"></i>
+                </button> 
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="col-md-6">
+                            <div class="input-group mb-3">
+                                <input type="text" id="txtBuscarAlimento" class="form-control m-1" placeholder="Alimento" aria-label="Search" aria-describedby="button-addon2">
+                                <div>
+                                    <button class="btn btn-outline zarape-boton-limpiar" type="button" onclick="cm.consultarAlimento();" >Buscar
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Categor&iacute;a</th>
+                                        <th>Precio</th>
+                                        <th>Mostrar Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyAlimentos">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

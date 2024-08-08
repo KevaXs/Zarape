@@ -1,0 +1,140 @@
+<div class="row justify-content-center content-fluid text-center mt-2 zarape">
+    <h3>Gesti&oacute;n de Bebidas</h3>
+    <div class="col-12 mt-4">
+
+        <div class="card zarape-card">
+
+            <div class="card-header tex t-center zarape-cardHeader">
+                <span class="h4">Detalle de la Bebida</span>
+                <button class="btn btn-outline float-end zarape-boton-limpiar"
+                        onclick="">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2 mb-5">
+                        <div class="form-floating">
+                            <input id="txtIdBebida" type="text" name="name"  class="form-control" placeholder="ID" readonly/>
+                            <label for="txtIdBebida" class="form-label">Id Bebida:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtBebida" type="text" name="name" class="form-control" placeholder="Nombre de alimento:">
+                            <label for="txtBebida" class="form-label">Nombre de la Bebida:</label>
+                        </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="form-floating">
+                            <input id="txtPrecioBebida" type="text" class="form-control" placeholder="Precio: $"/>                                    
+                            <label for="txtPrecioBebida" class="form-label">Precio:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating">                                         
+                            <input id="txtDescripcionBebida" type="text" name="name" class="form-control" placeholder="Descripci&oacute;n:">
+                            <label for="txtDescripcionBebida" class="form-label" >Descripci&oacute;n:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Default select example">
+                                <option class="zarape-cardOption" selected>Selecciona la Categor&iacute;a:</option>
+                                <option value="1">Refrescos</option>
+                                <option value="2">Aguas</option>
+                                <option value="3">Jugos</option>
+                                <option value="4">Cafés</option>
+                            </select>
+                            <label class="form-label">Categor&iacute;as:</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Foto:</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5 mt-5">
+                <div class="col-12 mx-auto">
+                    <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton btn-lg">
+                            <i class="fas fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                    <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton-eliminar btn-lg">
+                            <i class="fas fa-trash"></i>
+                            Eliminar
+                        </button>
+                    </div>
+                    <div class="btn-group col-auto m-2 " role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn zarape-boton-limpiar btn-lg">
+                            <i class="fas fa-eraser"></i>
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>               
+
+    <div class="row justify-content-center text-center mt-5 content-fluid">
+        <div class="col-12">
+
+            <div class="card">
+
+                <div class="card-header zarape-cardHeader">
+                    <span class="h3">Cat&aacute;logo de Bebidas</span>
+                    <button class="btn btn-outline float-end zarape-boton-eliminar"
+                            onclick="">Nuevo
+                        <i class="fas fa-add"></i>
+                    </button>                </div>
+
+                <div class="card-body zarape-card">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control m-1" placeholder="Bebida" aria-label="Search" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline zarape-boton-limpiar" type="button">Buscar
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Categor&iacute;a</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
