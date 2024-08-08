@@ -11,6 +11,11 @@ async function cargarModuloUsuarios()
     let resp = await fetch(url);
     let contenido = await resp.text();
     document.getElementById("contenedorPrincipal").innerHTML = contenido;
+
+    import('./modulos/sucursal.js').then(obj => {
+        cm = obj;
+        cm.inicializarModuloUsuario();
+    });
 }
 
 async function cargarModuloSucursales()
@@ -19,7 +24,7 @@ async function cargarModuloSucursales()
     let resp = await fetch(url);
     let contenido = await resp.text();
     document.getElementById("contenedorPrincipal").innerHTML = contenido;
-    
+
     import('./modulos/sucursal.js').then(obj => {
         cm = obj;
         cm.inicializarModuloSucursal();
@@ -45,7 +50,7 @@ async function cargarModuloAlimentos()
     // " => "operador flecha (arrow function)
     import('./modulos/alimento.js').then(obj => {
         cm = obj;
-        cm.inicializarModulo();
+        cm.inicializarModuloAlimento();
     });
 
 }
@@ -56,6 +61,11 @@ async function cargarModuloBebidas()
     let resp = await fetch(url);
     let contenido = await resp.text();
     document.getElementById("contenedorPrincipal").innerHTML = contenido;
+    
+        import('./modulos/alimento.js').then(obj => {
+        cm = obj;
+        cm.inicializarModuloBebida();
+    });
 }
 
 async function cargarModuloCombos()
@@ -64,19 +74,9 @@ async function cargarModuloCombos()
     let resp = await fetch(url);
     let contenido = await resp.text();
     document.getElementById("contenedorPrincipal").innerHTML = contenido;
-    
+
     import('./modulos/combo.js').then(obj => {
         cm = obj;
         cm.inicializarModuloCombo();
     });
-}
-
-async function cargarModuloComanda()
-{
-
-}
-
-async function cargarModuloPagos()
-{
-
 }
