@@ -62,7 +62,7 @@ let sucursales = [
                     }
                  ];
                  
-export function inicializarModulo()
+export function inicializarModuloSucursal()
 {
     setDetalleSucursalVisible(false);
     llenarTabla();
