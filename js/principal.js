@@ -62,7 +62,7 @@ async function cargarModuloBebidas()
     let contenido = await resp.text();
     document.getElementById("contenedorPrincipal").innerHTML = contenido;
     
-        import('./modulos/alimento.js').then(obj => {
+        import('./modulos/bebida.js').then(obj => {
         cm = obj;
         cm.inicializarModuloBebida();
     });
