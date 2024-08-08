@@ -5,7 +5,18 @@
 //Para abrir la consola "ctrl + shift + i"
 let cm = null; // Módulo Actual (current module)
 
+async function cargarModuloSucursales()
+{
+    let url = "modulos/sucursal.html";
+    let resp = await fetch(url);
+    let contenido = await resp.text();
+    document.getElementById("contenedorPrincipal").innerHTML = contenido;
 
+    import('./modulos/sucursal.js').then(obj => {
+        cm = obj;
+        cm.inicializarModuloSucursal();
+    });
+}
 
 async function cargarModuloUsuarios() {
     // Se define la URL de dónde está el código de HTML:
