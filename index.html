@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-grid.css"/>
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css"/>
+        <link rel="stylesheet" href="style/zarape/paleta_c.css"/>
+    </head>
+    <body>
+        <div class="container zarape">
+            <div class="row justify-content-center mt-3">
+                <h3 class="text-center">Bienvenido al Zarape</h3>
+                <div class="col-12">
+                    <div class="card zarape-card mt-4">
+                        <div class="card-header text-center zarape-menu">
+                            <h4>Datos de Acceso</h4>
+                        </div>
+                        <div class="card-body zarape-card">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div>
+                                        <label for="txtUsuario">Usuario:</label>
+                                        <input id="txtUsuario" type="text" class="form-control"/>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="txtUsuario">Contrase&ntilde;a:  </label>
+                                        <input id="txtContrasenia" type="password" class="form-control"/>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn mt-3 zarape-boton-eliminar btn-lg" onclick="validarUsuario()">Ingresar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <script src="js/login.js"></script>
+        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
