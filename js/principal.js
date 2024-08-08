@@ -12,7 +12,7 @@ async function cargarModuloUsuarios()
     let contenido = await resp.text();
     document.getElementById("contenedorPrincipal").innerHTML = contenido;
 
-    import('./modulos/sucursal.js').then(obj => {
+    import('./modulos/usuario.js').then(obj => {
         cm = obj;
         cm.inicializarModuloUsuario();
     });
