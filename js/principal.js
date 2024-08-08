@@ -7,16 +7,23 @@ let cm = null; // Módulo Actual (current module)
 
 
 
-async function cargarModuloSucursales()
-{
-    let url = "modulos/sucursal.html";
+async function cargarModuloUsuarios() {
+    // Se define la URL de dónde está el código de HTML:
+    let url = "modulos/usuario.html"; // Cambia a la ruta correcta del archivo HTML
+
+    // Se hace la petición del documento del módulo:
     let resp = await fetch(url);
+
+    // Se convierte la respuesta del servidor en texto HTML:
     let contenido = await resp.text();
+
+    // Insertamos el código HTML dentro del contenedor principal:
     document.getElementById("contenedorPrincipal").innerHTML = contenido;
 
-    import('./modulos/sucursal.js').then(obj => {
+    // Importamos el módulo de JavaScript correspondiente
+    import('./modulos/usuario.js').then(obj => {
         cm = obj;
-        cm.inicializarModuloSucursal();
+        cm.inicializarModulo();
     });
 }
 
