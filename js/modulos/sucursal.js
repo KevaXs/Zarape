@@ -9,7 +9,7 @@ let sucursales = [
                         numero       :  "2002",
                         colonia      :  "Centro Comercial",
                         codigoPostal :  "37150",
-                        horarios     :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
+                        horario      :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
                         estatus      :  "Activa"
                     },
                     {
@@ -21,7 +21,7 @@ let sucursales = [
                         numero       :  "2540",
                         colonia      :  "Jardines de Jerez",
                         codigoPostal :  "37530",
-                        horarios     :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
+                        horario      :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
                         estatus      :  "Activa"
                     },
                     {
@@ -33,7 +33,7 @@ let sucursales = [
                         numero       :  "105",
                         colonia      :  "Cerrito de Jerez Nte.",
                         codigoPostal :  "37545",
-                        horarios     :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
+                        horario      :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
                         estatus      :  "Activa"
                     },
                     {
@@ -45,7 +45,7 @@ let sucursales = [
                         numero       :  "108",
                         colonia      :  "Centro",
                         codigoPostal :  "37000",
-                        horarios     :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
+                        horario      :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
                         estatus      :  "Activa"
                     },
                     {
@@ -57,12 +57,12 @@ let sucursales = [
                         numero       :  "102-B",
                         colonia      :  "Centro",
                         codigoPostal :  "37000",
-                        horarios     :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
+                        horario      :  "Lunes - Domingo 9:00 a.m. - 1:00 p.m.",
                         estatus      :  "Activa"
                     }
                  ];
                  
-export function inicializarModuloSucursal()
+export function inicializarModulo()
 {
     setDetalleSucursalVisible(false);
     llenarTabla();
@@ -91,7 +91,7 @@ export function guardarSucursal()
     s.numero = document.getElementById("txtNumero").value;
     s.colonia = document.getElementById("txtColonia").value;
     s.codigoPostal = document.getElementById("txtCodigoPostal").value;
-    s.horarios = document.getElementById("txtHorarios").value;
+    s.horario = document.getElementById("txtHorario").value;
     
     // Una vez que tenemos el objeto de sucursal con sus datos llenos,
     // revisamos si se va a insertar o actualizar:
@@ -129,15 +129,7 @@ export function eliminarSucursal()
         sucursales.splice(posEliminar, 1);
         
         // Limpiar los campos después de eliminar
-        document.getElementById("txtIdSucursal").value = '';
-        document.getElementById("txtSucursal").value = '';
-        document.getElementById("txtLatitud").value = '';
-        document.getElementById("txtLongitud").value = '';
-        document.getElementById("txtCalle").value = '';
-        document.getElementById("txtNumero").value = '';
-        document.getElementById("txtColonia").value = '';
-        document.getElementById("txtCodigoPostal").value = '';
-        document.getElementById("txtHorarios").value = '';
+        limpiarSucursal();
         
         // Volver a llenar la tabla con los datos actualizados
         llenarTabla();
@@ -151,7 +143,7 @@ export function eliminarSucursal()
 // Esta función limpia los campos del formulario
 export function limpiarSucursal()
 {
-    // document.getElementById("txtIdSucursal").value = '';
+    document.getElementById("txtIdSucursal").value = '';
     document.getElementById("txtSucursal").value = '';
     document.getElementById("txtLatitud").value = '';
     document.getElementById("txtLongitud").value = '';
@@ -159,13 +151,13 @@ export function limpiarSucursal()
     document.getElementById("txtNumero").value = '';
     document.getElementById("txtColonia").value = '';
     document.getElementById("txtCodigoPostal").value = '';
-    document.getElementById("txtHorarios").value = '';
+    document.getElementById("txtHorario").value = '';
 }
 
 
 // Esta funcion permite consultar una sucursal mediante su nombre
 // y muestra solo la sucursal encontrada, ocultando las demas. 
-export function consultar() 
+export function consultarSucursal() 
 {
     let nombreSucursal = document.getElementById("txtBuscarSucursal").value.toLowerCase();
     let contenido = '';
@@ -177,10 +169,9 @@ export function consultar()
             encontrada = true;
             contenido +=    '<tr>' +
                             '<td>' + sucursales[i].nombre + '</td>' +
-                            '<td>' + sucursales[i].calle + ", " + sucursales[i].numero + ", " + sucursales[i].colonia + '</td>' +
-                            '<td>' + sucursales[i].codigoPostal + '</td>' +
-                            '<td>' + sucursales[i].horarios + '</td>' +
-                            '<td><a href="#" class="text-info" onclick="cm.mostrarDetalleSucursal(' + sucursales[i].id + ');"><i class="fas fa-eye" style="color:#c60000"></i></a>'+ '</td>' +
+                            '<td>' + sucursales[i].calle + " " + sucursales[i].numero + ", " + sucursales[i].colonia + ", " + sucursales[i].codigoPostal + "." + '</td>' +
+                            '<td>' + sucursales[i].horario + '</td>' +
+                            '<td><a href="#" class="text-info" onclick="cm.mostrarDetalleSucursal(' + sucursales[i].id + ');"><i class="fas fa-eye" style="color: #C60000"></i></a>'+ '</td>' +
                         '</tr>';
         }
     }
@@ -204,11 +195,12 @@ function validarCampos()
     let numero = document.getElementById("txtNumero").value;
     let colonia = document.getElementById("txtColonia").value;
     let codigoPostal = document.getElementById("txtCodigoPostal").value;
-    let horarios = document.getElementById("txtHorarios").value;
+    let horario = document.getElementById("txtHorario").value;
 
     // Verificar si todos los campos están llenos
     if (nombre === "" || latitud === "" || longitud === "" || calle === "" || 
-        numero === "" || colonia === "" || codigoPostal === "" || horarios === "" ) {
+        numero === "" || colonia === "" || codigoPostal === "" || horario === "") 
+    {
         return false;
     }
     return true;
@@ -236,22 +228,13 @@ export function mostrarDetalleSucursal(idSucursal)
     document.getElementById("txtNumero").value = sucursal.numero;
     document.getElementById("txtColonia").value = sucursal.colonia;
     document.getElementById("txtCodigoPostal").value = sucursal.codigoPostal;
-    document.getElementById("txtHorarios").value = sucursal.horarios;
+    document.getElementById("txtHorario").value = sucursal.horario;
     setDetalleSucursalVisible(true);
 }
 
 export function mostrarFormularioNuevo()
 {
-    // limpiar();
-    document.getElementById("txtIdSucursal").value = '';
-    document.getElementById("txtSucursal").value = '';
-    document.getElementById("txtLatitud").value = '';
-    document.getElementById("txtLongitud").value = '';
-    document.getElementById("txtCalle").value = '';
-    document.getElementById("txtNumero").value = '';
-    document.getElementById("txtColonia").value = '';
-    document.getElementById("txtCodigoPostal").value = '';
-    document.getElementById("txtHorarios").value = '';
+    limpiarSucursal();
     setDetalleSucursalVisible(true);
 }
 
@@ -270,10 +253,9 @@ function llenarTabla()
         // contenido = contenido + '<tr>' + '</tr>'
         contenido +=    '<tr>' +
                             '<td>' + sucursales[i].nombre + '</td>' +
-                            '<td>' + sucursales[i].calle + ", " + sucursales[i].numero + ", " + sucursales[i].colonia + '</td>' +
-                            '<td>' + sucursales[i].codigoPostal + '</td>' +
-                            '<td>' + sucursales[i].horarios + '</td>' +
-                            '<td><a href="#" class="text-info" onclick="cm.mostrarDetalleSucursal(' + sucursales[i].id + ');"><i class="fas fa-eye" style="color:#c60000"></i></a>'+ '</td>' +
+                            '<td>' + sucursales[i].calle + " " + sucursales[i].numero + ", " + sucursales[i].colonia + ", " + sucursales[i].codigoPostal + "." + '</td>' +
+                            '<td>' + sucursales[i].horario + '</td>' +
+                            '<td><a href="#" class="text-info" onclick="cm.mostrarDetalleSucursal(' + sucursales[i].id + ');"><i class="fas fa-eye" style="color: #C60000"></i></a>'+ '</td>' +
                         '</tr>';
     }
     
