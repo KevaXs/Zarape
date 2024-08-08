@@ -1,27 +1,27 @@
-<div class="row justify-content-center content-fluid text-center mt-2 zarape">
+<div id="divDetalleUsuario" class="row justify-content-center content-fluid text-center mt-2 zarape">
     <h3>Gesti&oacute;n de Usuario</h3>
     <div class="col-12 mt-4">
 
         <div class="card zarape-card">
 
-            <div class=" text-center zarape-cardHeader card-header">
-                <span class="h4">Detalle del Usuario</span>
+            <div class="card-header tex t-center zarape-cardHeader">
+                <span class="h4">Detalle de Usuario</span>
                 <button class="btn btn-outline float-end zarape-boton-limpiar"
-                        onclick="">
+                        onclick="cm.setDetalleUsuarioVisible(false);">
                     <i class="fas fa-times"></i>
-                </button>
+                </button>            
             </div>
 
             <div class="card-body">
-                <div class="row mb-5">
-                    <div class="col-2">
+                <div class="row">
+                    <div class="col-2 mb-4">
                         <div class="form-floating ">
-                            <input id="txtIdusuario" type="text" name="name"  class="form-control " placeholder="ID" readonly/>
-                            <label for="txtIdusuario" class=" form-label">Id Usuario:</label>
+                            <input id="txtIdUsuario" type="text" name="name"  class="form-control " placeholder="ID" readonly/>
+                            <label for="txtIdUsuario" class=" form-label">Id Usuario</label>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-6">
                         <div class="form-floating col-6">
                             <input id="txtUsuario" type="text" name="name" class="form-control " placeholder="Nombre usuario:">
@@ -30,28 +30,76 @@
                     </div>
                     <div class="col-6 ">
                         <div class="form-floating col-6">
-                            <input id="txtContraseña" type="text" name="name"  class="form-control" placeholder="ID" readonly/>
-                            <label for="txtContraseña" class=" form-label">Contraseña:</label>
+                            <input id="txtContraseña" type="text" name="name"  class="form-control" placeholder="contraseña" readonly/>
+                            <label for="txtContraseña" class=" form-label">Contrase&ntilde;a:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-4">
+                        <div class="form-floating col-6">
+                            <input id="txtNombre" type="text" name="name" class="form-control " placeholder="Usuario:">
+                            <label for="txtNombre" class="form-label ">Nombre:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating col-6">
+                            <input id="txtApellidoP" type="text" name="name" class="form-control " placeholder="Nombre:">
+                            <label for="txtApellidoP" class="form-label ">Apellido Paterno:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating col-6">
+                            <input id="txtApellidoM" type="text" name="name" class="form-control " placeholder="Nombre:">
+                            <label for="txtApellidoM" class="form-label ">Apellido Materno:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-3">
+                        <div class="form-floating col-6">
+                            <input id="txtTelefono" type="text" name="name" class="form-control " placeholder="Telefono:">
+                            <label for="txtTelefono" class="form-label ">Tel&eacute;fono:</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating col-6">
+                            <input id="txtCalle" type="text" name="name"  class="form-control" placeholder="Calle">
+                            <label for="txtCalle" class=" form-label">Calle:</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating col-6">
+                            <input id="txtNumero" type="text" name="name"  class="form-control" placeholder="Numero" >
+                            <label for="txtNumero" class=" form-label">N&uacute;mero:</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating col-6">
+                            <input id="txtColonia" type="text" name="name"  class="form-control" placeholder="Colonia">
+                            <label for="txtColonia" class="form-label">Colonia:</label>
                         </div>
                     </div>
                 </div>
 
+
                 <div class="row mb-5 mt-5">
                     <div class="col-12 mx-auto">
-                        <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn zarape-boton btn-lg">
+                        <div class="btn-group col-1 m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn zarape-boton btn-lg" onclick="cm.guardarU();">
                                 <i class="fas fa-save"></i>
                                 Guardar
+                                
                             </button>
                         </div>
-                        <div class="btn-group col-auto m-2" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn zarape-boton-eliminar btn-lg">
+                        <div class="btn-group col-1 m-2" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn zarape-boton-eliminar btn-lg" onclick="cm.eliminarU();">
                                 <i class="fas fa-trash"></i>
                                 Eliminar
                             </button>
                         </div>
-                        <div class="btn-group col-auto m-2 " role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn zarape-boton-limpiar btn-lg">
+                        <div class="btn-group col-1 m-2 " role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn zarape-boton-limpiar btn-lg" onclick="cm.limpiarU();">
                                 <i class="fas fa-eraser"></i>
                                 Limpiar
                             </button>
@@ -63,28 +111,28 @@
     </div>               
 </div>
 
-<div class="row justify-content-center text-center mt-5 content-fluid">
+<div id="divCatalogoUsuarios" class="row justify-content-center text-center mt-5 content-fluid">
     <div class="col-12">
 
         <div class="card zarape-card">
 
-            <div class="card-header zarape-cardHeader zarape-arial-black">
-                <span class="h3">Cat&aacute;logo de Usuarios</span>
+            <div class="card-header zarape-cardHeader">
+                <span class="h4">Cat&aacute;logo de Usuarios</span>
                 <button class="btn btn-outline float-end zarape-boton-eliminar"
-                        onclick="cm.setDetalleAlimentoVisible(true);">Nuevo
+                        onclick="cm.mostrarFormularioNuevo();">
                     <i class="fas fa-add"></i>
-                </button>            </div>
+                    Nuevo
+                </button>
+            </div>
 
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control m-1" placeholder="Usuario" aria-label="Search" aria-describedby="button-addon2">
+                                <input  id="txtBuscarUsuario" type="text" class="form-control m-1" placeholder="Usuario" aria-label="Search" aria-describedby="button-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline zarape-boton-limpiar" type="button">Buscar
-                                        <i class="fas fa-search"></i>
-                                    </button>
+                                    <button class="btn zarape-boton-limpiar m-1" type="button" id="button-addon2" onclick="cm.consultar();">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -93,12 +141,14 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
                                         <th>Usuario</th>
-                                        <th>Contraseña</th>
+                                        <th>Nombre Completo</th>
+                                        <th>Telefono</th>
+                                        <th>Direcci&oacute;n</th>
+                                        <th>Ver Detalle</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tbodyUsuarios">
 
                                 </tbody>
                             </table>
