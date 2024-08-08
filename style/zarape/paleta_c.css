@@ -1,0 +1,98 @@
+.zarape-menu
+{
+    background-color: #805A3B;
+    color: #FEF2E4;
+    font-family: 'Comic Sans MS';
+}
+
+.zarape h3
+{
+    font-family: 'Arial Black';
+}
+
+.zarape-menu a:hover
+{
+    background-color: #C60000;
+    color: #FEF2E4;
+}
+
+.zarape-boton
+{
+    opacity: 1;
+    background-color: #805A3B;
+    color: #FEF2E4;
+}
+
+.zarape-boton:hover
+{
+    opacity: 0.5;
+    background-color: #805A3B;
+    color: #FEF2E4;
+}
+
+.zarape-boton-eliminar
+{
+    opacity: 1;
+    background-color: #C60000;
+    color: #FEF2E4;
+}
+
+.zarape-boton-eliminar:hover
+{
+    opacity: 0.5;
+    background-color: #C60000;
+    color: #FEF2E4;
+}
+
+.zarape-boton-limpiar
+{
+    opacity: 1;
+    background-color: #FD974F;
+    color: #FEF2E4;
+}
+
+.zarape-boton-limpiar:hover
+{
+    opacity: 0.5;
+    background-color: #FD974F;
+    color: #FEF2E4;
+}
+
+.zarape-card
+{
+    background-color: #FEF2E4;;
+    font-family: 'Comic Sans MS';
+}
+
+.zarape-card floating
+{
+    background-color: #805A3B;
+}
+
+.zarape-cardHeader
+{
+    background-color: #805A3B;
+    color: #FEF2E4;
+    font-family: 'Arial Black';
+}
+
+.zarape-catalogo-card
+{
+    background-color: #FD974F;
+}
+
+.zarape-catalogo-cardHeader
+{
+    background-color: #C60000;
+    color: #FFFFFF;
+}
+
+.zarape-arial-black
+{
+    font-family: 'Arial Black';
+}
+
+.zarape-comic-sans
+{
+    font-family: 'Comic Sans MS';
+}
