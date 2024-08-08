@@ -14,7 +14,7 @@
                     <div class="col-2">
                         <div class="form-floating">
                             <input id="txtIdSucursal" type="text" name="name"  class="form-control" placeholder="ID" readonly/>
-                            <label for="txtId" class="form-label">Id Sucursal:</label>
+                            <label for="txtIdSucursal" class="form-label">Id Sucursal:</label>
                         </div>
                     </div>
                 </div>
@@ -61,15 +61,15 @@
                 <div class="col-2">
                     <div class="form-floating">
                         <input id="txtCodigoPostal" type="text" class="form-control" placeholder="C&oacute;digoPostal  "/>                                    
-                        <label for="txtCodigoPostal" class="form-label">CP:</label>
+                        <label for="txtCodigoPostal" class="form-label">C&oacute;digo Postal:</label>
                     </div>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-4">
                     <div class="form-floating">                                         
-                        <input id="txtHorarios" type="text" name="name" class="form-control" placeholder="Horarios">
-                        <label for="txtHorarios" class="form-label">Horarios:</label>
+                        <input id="txtHorario" type="text" name="name" class="form-control" placeholder="Horarios">
+                        <label for="txtHorario" class="form-label">Horario:</label>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
     <div class="col-12">
         <div class="card zarape-card">
             <div class="card-header zarape-cardHeader zarape-arial-black">
-                <span class="h4">Cat&aacute;logo de Sucursales</span>
+                <span class="h3">Cat&aacute;logo de Sucursales</span>
                 <button class="btn btn-outline float-end zarape-boton-eliminar"
                         onclick="cm.mostrarFormularioNuevo();">
                     Nuevo
@@ -117,7 +117,7 @@
                             <div class="input-group mb-3">
                                 <input id="txtBuscarSucursal" type="text" class="form-control m-1" placeholder="Sucursal" aria-label="Search" aria-describedby="button-buscar">
                                 <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline zarape-boton-limpiar" onclick="cm.consultar();">
+                                    <button type="button" class="btn btn-outline zarape-boton-limpiar" onclick="cm.consultarSucursal();">
                                         Buscar
                                         <i class="fas fa-search"></i>
                                     </button>
@@ -130,7 +130,6 @@
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Dirección</th>
-                                        <th>CP</th>
                                         <th>Horario</th>
                                         <th>Ver Detalle</th>
                                     </tr>
