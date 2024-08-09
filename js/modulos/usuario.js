@@ -90,7 +90,7 @@ let usuarios =
 
         ];
 
-export function inicializarModuloUsuario()
+export function inicializarModulo()
 {
     setDetalleUsuarioVisible(false);
     llenarTabla();
