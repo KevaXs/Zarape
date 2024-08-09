@@ -135,10 +135,10 @@ export function guardarAlimento()
     
     //Una vez que tenemos el objeto de alimento con sus datos llenos,
     //revisamos si se va a insertar o actualizar:
-    posTemp = buscarPosicionAlimentoPorID(parseInt(document.getElementById("txtId").value));
+    posTemp = buscarPosicionAlimentoPorID(parseInt(document.getElementById("txtIdAlimento").value));
     if (posTemp >= 0) //Si esta condicion se cumple, el alimento ya existe
     {
-        a.id = parseInt(document.getElementById("txtId").value);
+        a.id = parseInt(document.getElementById("txtIdAlimento").value);
         
         //Reemplazamos el objeto en la posicion del alimento anterior:
         alimentos[posTemp] = a; 
@@ -148,7 +148,7 @@ export function guardarAlimento()
         //Como el alimento no existe, lo agregamos al final del arreglo:
         a.id = generarIDAlimento();
         alimentos.push(a);
-        document.getElementById("txtId").value = a.id;
+        document.getElementById("txtIdAlimento").value = a.id;
     }
     
     llenarTabla();
@@ -159,7 +159,7 @@ export function guardarAlimento()
 export function eliminarAlimento()
 {
      // Obtener el ID del alimento a eliminar desde el campo correspondiente
-    let idEliminar = parseInt(document.getElementById("txtId").value);
+    let idEliminar = parseInt(document.getElementById("txtIdAlimento").value);
     
     // Buscar la posición del alimento en el arreglo por su ID
     let posEliminar = buscarPosicionAlimentoPorID(idEliminar);
@@ -182,7 +182,7 @@ export function eliminarAlimento()
 
 export function limpiarAlimento()
 {
-    document.getElementById("txtId").value = '';
+    document.getElementById("txtIdAlimento").value = '';
     document.getElementById("txtAlimento").value = '';
     document.getElementById("txtDescripcionAlimento").value = '';
     document.getElementById("txtPrecioAlimento").value = '';
@@ -249,7 +249,7 @@ export function mostrarDetalleAlimento(idAlimento)
     
     limpiarAlimento();
     alimento = alimentos[pos];
-    document.getElementById("txtId").value = alimento.id;
+    document.getElementById("txtIdAlimento").value = alimento.id;
     document.getElementById("txtAlimento").value = alimento.producto.nombre;
     document.getElementById("txtDescripcionAlimento").value = alimento.producto.descripcion;
     document.getElementById("txtPrecioAlimento").value = alimento.producto.precio;
