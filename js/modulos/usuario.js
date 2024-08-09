@@ -126,7 +126,7 @@ function validarCampos() {
         telefono === "" ||
         calle === "" ||
         numero === "" ||
-        colonia === "" ||
+        colonia === "" 
     ) {
         // Si algún campo está vacío, retorna false
         return false;
