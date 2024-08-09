@@ -92,7 +92,7 @@ let bebidas = [
                     }
                 ];
                 
-export function inicializarModulo()
+export function inicializarModuloBebida()
 {
     setDetalleBebidaVisible(false);
     llenarComboBoxCategorias();
