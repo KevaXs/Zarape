@@ -25,7 +25,7 @@ let bebidas = [
                         producto :  {
                                         id          : 1,
                                         nombre      : "Refresco ligero",
-                                        descripcion : "600ml, refresco sin azucar.",
+                                        descripcion : "600ml, refresco sin azúcar.",
                                         foto        : "",
                                         precio      : 19.99,
                                         categoria   :   {
