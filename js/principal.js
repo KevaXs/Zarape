@@ -34,7 +34,7 @@ async function cargarModuloUsuarios() {
     // Importamos el módulo de JavaScript correspondiente
     import('./modulos/usuario.js').then(obj => {
         cm = obj;
-        cm.inicializarModuloUsuario();
+        cm.inicializarModuloUsuari();
     });
 }
 
