@@ -109,7 +109,6 @@ function generarContraseña(longitud = 12) {
 function validarCampos() {
     // Obtiene los valores de todos los campos
     let usuario = document.getElementById("txtUsuario").value;
-    let contraseña = document.getElementById("txtContraseña").value;
     let nombre = document.getElementById("txtNombre").value;
     let apellidoP = document.getElementById("txtApellidoP").value;
     let apellidoM = document.getElementById("txtApellidoM").value;
@@ -121,7 +120,6 @@ function validarCampos() {
     // Verifica que todos los campos requeridos no estén vacíos
     if (
         usuario === "" ||
-        contraseña === "" ||
         nombre === "" ||
         apellidoP === "" ||
         apellidoM === "" ||
