@@ -19,7 +19,7 @@
 
 .zarape-menu a.logo:hover
 {
-    display: none;
+    display: contents;
 }
 
 .zarape-menu a.logo
