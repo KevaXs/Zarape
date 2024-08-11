@@ -119,19 +119,21 @@
                 <span class="h4">Cat&aacute;logo de Usuarios</span>
                 <button class="btn btn-outline float-end zarape-boton-eliminar"
                         onclick="cm.mostrarFormularioNuevo();">
-                    <i class="fas fa-add"></i>
                     Nuevo
-                </button>
+                    <i class="fas fa-add"></i>
+                </button> 
             </div>
 
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                        <div class="col-md-6">
-                            <div class="input-group mb-3">
-                                <input  id="txtBuscarUsuario" type="text" class="form-control m-1" placeholder="Usuario" aria-label="Search" aria-describedby="button-addon2">
+                        <div class="col-md-6 mb-4">
+                           <div class="input-group mb-3">
+                                <input id="txtBuscarSucursal" type="text" class="form-control m-1" placeholder="Sucursal" aria-label="Search" aria-describedby="button-buscar">
                                 <div class="input-group-append">
-                                    <button class="btn zarape-boton-limpiar m-1" type="button" id="button-addon2" onclick="cm.consultar();">Buscar</button>
+                                    <button type="button" class="btn btn-outline zarape-boton-limpiar"  onclick="cm.consultar();"Buscar
+                                        <i class="fas fa-search"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
