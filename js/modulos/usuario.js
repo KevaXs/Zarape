@@ -205,7 +205,7 @@ export function eliminarU()
         // Volver a llenar la tabla con los datos actualizados
         llenarTabla();
 
-        Swal.fire('Movimiento realizado.', 'Producto eliminado.', 'success');
+        Swal.fire('Movimiento realizado.', 'Usuario eliminado.', 'success');
     } else {
         Swal.fire('Error', 'El usuario  ' + ' no existe.', 'error');
     }
