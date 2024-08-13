@@ -668,15 +668,16 @@ function validarCampos() {
     let precio = document.getElementById("txtPrecioCombo").value;
     let descripcion = document.getElementById("txtDescripcionCombo").value;
 
-//    // Verificar si los campos de texto están llenos
-//    if (nombre === "" || precio === "" || descripcion === "") {
-//        return false;
-//    }
+    // Verificar si los campos de texto están llenos
+    if (nombre === "" || precio === "" || descripcion === "") {
+        Swal.fire('Error', 'Por favor, complete todos los campos de texto.', 'error');
+        return false;
+    }
 
     // Verificar si al menos un alimento está seleccionado
     let alimentoSeleccionado = false;
     for (let i = 1; i <= 5; i++) {
-        if (document.getElementById("chkAlimento" + i).checked) {
+        if (document.getElementById('chkAlimento' + i).checked) {
             alimentoSeleccionado = true;
             break;
         }
@@ -685,18 +686,25 @@ function validarCampos() {
     // Verificar si al menos una bebida está seleccionada
     let bebidaSeleccionada = false;
     for (let i = 1; i <= 5; i++) {
-        if (document.getElementById("chkBebida" + i).checked) {
+        if (document.getElementById('chkBebida' + i).checked) {
             bebidaSeleccionada = true;
             break;
         }
     }
 
-    // Verificar si ambas condiciones se cumplen
-    if ((alimentoSeleccionado && bebidaSeleccionada) || (nombre === "" || precio === "" || descripcion === "")) {
-        return true;
-    } else {
+    // Verificar si se ha seleccionado al menos un alimento y una bebida
+    if (!alimentoSeleccionado) {
+        Swal.fire('Error', 'Por favor, seleccione al menos un alimento.', 'error');
         return false;
     }
+
+    if (!bebidaSeleccionada) {
+        Swal.fire('Error', 'Por favor, seleccione al menos una bebida.', 'error');
+        return false;
+    }
+
+    // Si todas las condiciones se cumplen, retornar true
+    return true;
 }
 
 //export function mostrarDetalleCombo(idCombo)
