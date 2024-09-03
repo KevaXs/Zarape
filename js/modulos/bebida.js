@@ -224,7 +224,7 @@ for (let i = 0; i < bebidas.length; i++) {
     document.getElementById("tbodyBebida").innerHTML = contenido;
 }
 
-export function mostrarDetalleBebidas(idBebida)
+export function mostrarDetalleBebida(idBebida)
 {    
     let bebida = null;
     let pos = buscarPosicionBebidaPorID(idBebida);
