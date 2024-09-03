@@ -244,7 +244,7 @@ export function mostrarDetalleBebidas(idBebida)
     document.getElementById("cmbCategoriab").value = bebida.producto.categoria.id;
     setDetalleBebidaVisible(true);
 }
-export function mostrarFormulariNuevoBebidas()
+export function mostrarFormularioNuevoBebidas()
 {
     limpiarBebida();
     setDetalleBebidaVisible(true);
