@@ -268,7 +268,7 @@ function llenarTabla()
                             '<td>' + bebidas[i].producto.nombre + '</td>' +
                             '<td>' + bebidas[i].producto.categoria.nombre + '</td>' +
                             '<td class="text-end"> $ ' + bebidas[i].producto.precio + '</td>' +
-                            '<td><a href="#" class="text-info" onclick="cm.mostrarDetalleBebidas(' + bebidas[i].id + ');"><i class="fas fa-eye" style="color: #C60000"></i></a>'+ '</td>' +
+                            '<td><a href="#" class="text-info" onclick="cm.mostrarDetalleBebida(' + bebidas[i].id + ');"><i class="fas fa-eye" style="color: #C60000"></i></a>'+ '</td>' +
                         '</tr>';
     }
     
